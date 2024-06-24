@@ -5,16 +5,20 @@
 @section('content')
 <main id="main" class="main">
 
-    <div class="row mb-3">
-        <div class="col-md-6">
-            <form action="{{ route('products.import') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('products.import') }}" method="POST" enctype="multipart/form-data">
+        <div class="row mb-3">
+            <div class="col-md-8">
                 @csrf
                 <input type="file" name="file" class="form-control">
-                <br>
-                <button class="btn btn-success"><i class="fa fa-file"></i> Import User Data</button>
-            </form>
+            </div>
+            <div class="col-md-2">
+                    <button class="btn btn-success"><i class="fa fa-file"></i> Import User Data</button>
+            </div>
+            <div class="col-md-2">
+                <a class="btn btn-warning float-end" href="{{ route('products.export') }}"><i class="fa fa-download"></i> Export User Data</a>
+            </div>
         </div>
-    </div>
+    </form>
     {{-- Page Title --}}
     <div class="row mb-3">
         <div class="col-md-6">
@@ -23,7 +27,6 @@
             </div>
         </div>
         <div class="col-md-6 text-end">
-            <a class="btn btn-warning float-end" href="{{ route('products.export') }}"><i class="fa fa-download"></i> Export User Data</a>
         </div>
     </div>
 
