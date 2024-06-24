@@ -6,12 +6,6 @@ use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Http\Request;
 use App\Models\User;
 use DataTables;
-use App\Mail\DemoMail;
-use App\Mail\OrderShipped;
-use App\Mail\NewTestMail;
-use App\Jobs\TestJob;
-use Mail;
-use Hash;
 
 class UserController extends AdminController
 {

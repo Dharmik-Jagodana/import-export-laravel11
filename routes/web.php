@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AdminSettingController;
+use App\Http\Controllers\Admin\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +39,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     // AdminSettingController
     Route::get('/admin/admin-setting', [AdminSettingController::class ,'index'])->name('admin.setting');
     Route::put('/admin/admin-setting-update', [AdminSettingController::class ,'update'])->name('admin.setting.update');
+
+    // ProductController
+    Route::get('product', [ProductController::class, 'index'])->name('product.index');
+    Route::get('products-export', [ProductController::class, 'export'])->name('products.export');
+    Route::post('products-import', [ProductController::class, 'import'])->name('products.import');
 });

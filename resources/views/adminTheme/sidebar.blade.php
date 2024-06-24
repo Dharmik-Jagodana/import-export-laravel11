@@ -17,5 +17,13 @@
                 <span>Users</span>
             </a>
         </li>
+
+        {{-- Product --}}
+        <li class="nav-item {{ Request::is('admin/product*') ? 'active' : '' }}">
+            <a class="nav-link " href="{{ route('product.index') }}">
+                <i class="fab fa-product-hunt"></i>
+                <span>Product</span>
+            </a>
+        </li>
     </ul>
 </aside>
